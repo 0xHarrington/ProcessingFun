@@ -3,7 +3,7 @@ int w = 2600;
 int h = 2000;
 int scl = 20;
 int bg = 0;
-int str = 255;
+int str = 0;
 float angle = 7 * PI/18;
 float flying = 0;
 float noiseOffset = 150;
@@ -21,7 +21,7 @@ void setup() {
 void draw() {
   background(bg);
   stroke(str);
-  noStroke();
+  //noStroke();
   noFill();
   translate(width/2, height/2);
   rotateX(angle);
@@ -43,7 +43,7 @@ void draw() {
   for (int y = 0; y < rows-1; y++) {
     beginShape(TRIANGLE_STRIP);
     for (int x = 0; x < cols; x++) {
-      fill(map(terrain[x][y], -noiseOffset, noiseOffset, 100, 0), 100, 80);
+      //fill(map(terrain[x][y], -noiseOffset, noiseOffset, 100, 0), 100, 80);
       vertex(x*scl, y*scl, terrain[x][y]);
       vertex(x*scl, (y+1)*scl, terrain[x][y+1]);
     }
